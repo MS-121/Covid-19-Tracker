@@ -1,0 +1,39 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+
+
+
+
+<div class="news py-4 no-gutter bg-light">
+    <div class="container">
+            <div class="heading">
+                <p><small class="lead">Jaan Hai To Jahan Hai !!</small></p>
+                <h2>Latest News | India</h2>
+
+            </div>
+        {% for news in context %}
+        <section class="curr_news">
+            <div class="container py-3">
+                <div class="card border-0">
+                    <div class="row rounded">
+                        <div class="col-md-3 text-center mx-auto my-auto">
+                            <img src="{{news.pic}}" class="w-100 rounded">
+                        </div>
+                        <div class="col-md-9 px-3 py-2">
+                            <div class="card-block px-3">
+                                <h5 class="card-title">{{news.heading|title}}</h5>
+                                <p class="card-text">{{news.content}}</p>
+<!--                                <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                                <a href="{{news.link}}" class="btn btn-info">Read More</a>
+<!--                                <small class="lead float-right">INDIA TODAY</small>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
